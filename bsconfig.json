@@ -1,0 +1,26 @@
+{
+  "name": "emotions",
+  "version": "0.1.0",
+  "reason": {
+    "react-jsx": 3
+  },
+
+  "bsc-flags": [ "-bs-super-errors", "-bs-no-version-header" ],
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "bs-dependencies": [ "reason-react","bs-css" ],
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "warnings": {
+    "error": "+101"
+  },
+  "namespace": true,
+  "refmt": 3
+}
