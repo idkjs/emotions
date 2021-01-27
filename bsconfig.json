@@ -1,25 +1,14 @@
 {
   "name": "emotions",
   "version": "0.1.0",
-  "reason": {
-    "react-jsx": 3
-  },
-
-  "bsc-flags": [ "-bs-super-errors", "-bs-no-version-header" ],
-  "package-specs": [
-    {
-      "module": "commonjs",
-      "in-source": true
-    }
-  ],
-  "suffix": ".bs.js",
-  "bs-dependencies": [ "reason-react","bs-css" ],
-  "sources": {
-    "dir": "src",
-    "subdirs": true
-  },
+  "sources": ["src"],
+  "bs-dependencies": ["reason-react", "re-classnames","@minima.app/re-css"],
+  "reason": { "react-jsx": 3 },
+  "bsc-flags": ["-open Belt"],
+  "ppx-flags": ["@ahrefs/bs-emotion-ppx/ppx"],
+ "suffix": ".bs.js",
   "warnings": {
-    "error": "+101"
+    "number": "-44"
   },
   "namespace": true,
   "refmt": 3

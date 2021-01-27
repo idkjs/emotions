@@ -2,13 +2,14 @@
   "name": "emotions",
   "version": "0.1.0",
   "scripts": {
-    "build": "bsb -make-world",
-    "start": "BS_WATCH_CLEAR=true bsb -make-world -w",
-    "clean": "bsb -clean-world",
-    "webpack": "webpack -w",
-    "webpack:production": "NODE_ENV=production webpack",
-    "server": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "BS_WATCH_CLEAR=true bsb -make-world -w",
+    "start": "parcel src/index.html",
+    "prestart": "yarn run clean:bs && yarn run build:bs",
+    "build": "parcel build src/index.html",
+    "prebuild": "yarn run clean:dist && yarn run clean:bs && yarn run build:bs",
+    "build:bs": "bsb -make-world",
+    "clean:bs": "bsb -clean-world",
+    "clean:dist": "rm -rf dist"
   },
   "keywords": [
     "BuckleScript",
@@ -18,19 +19,17 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@ahrefs/bs-emotion-ppx": "2.0.0",
+    "@babel/core": "^7.0.0",
     "@emotion/css": "^11.1.3",
-    "bs-css": "^13.2.0",
-    "css-loader": "^5.0.0",
-    "html-webpack-plugin": "^4.5.0",
+    "@emotion/react": "^11.1.4",
+    "@minima.app/re-css": "1.0.1",
+    "parcel-bundler": "1.12.4",
+    "re-classnames": "4.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "reason-react": "^0.9.1",
-    "style-loader": "^2.0.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
-  },
-  "devDependencies": {
     "bs-platform": "^8.4.2"
+
   }
 }
